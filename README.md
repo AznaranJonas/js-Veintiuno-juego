@@ -45,6 +45,7 @@ Este es un juego de cartas tipo Blackjack hecho para practicar programación. Es
 - `assets/css/styles.css` → Los estilos (cómo se ve el juego).
 - `assets/cartas/` → Las imágenes de las cartas.
 
+
 ## Cómo cambiar cosas (fácil)
 - Cambiar nombres por defecto: En `juego.js`, busca el arreglo `nombres = ['Jugador 1', 'Jugador 2']` y cámbialos.
 - Cambiar reglas (por ejemplo el valor del As): En `valorDeCarta(carta)` modifica el `return 11` del As por otro valor (si quieres experimentar).
