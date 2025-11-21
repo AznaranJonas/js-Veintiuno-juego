@@ -1,0 +1,296 @@
+html, body {
+    margin: 0px;
+    background-color: #5C3A21 !important; /* marrón */
+    color: white;
+}
+
+
+.titulo {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    font-size: 25px;
+}
+
+.carta {
+    position: relative;
+    width: 150px;
+    left: 100px;
+    margin-left: -75px;
+}
+
+#computadora-cartas, #jugador-cartas {
+    height: 240px;
+}
+
+/* Wrapper: ambos paneles en una sola fila y centrados */
+.area-cartas {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important; /* centra los dos paneles en la página */
+    align-items: flex-start !important;   /* alineados por arriba */
+    gap: 40px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 24px !important;
+}
+
+/* Forzar layout horizontal y centrado para los dos paneles */
+.area-cartas {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 32px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 18px !important;
+}
+
+/* Panel individual: ocupa espacio razonable para mostrar cartas */
+.area-cartas > .panel {
+    flex: 0 0 460px !important;   /* ancho fijo aproximado */
+    height: 320px !important;     /* altura fija para igualdad visual */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    background: var(--panel-bg);
+    border-radius: 8px;
+}
+
+/* Zona interna donde están las imágenes de cartas: en fila y centradas */
+.divCartas {
+    display: flex !important;
+    gap: 12px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-height: 200px !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    padding: 8px !important;
+    box-sizing: border-box !important;
+}
+
+/* Asegurar que la zona de cartas tenga altura y las muestre */
+.divCartas {
+    display: flex !important;
+    gap: 12px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-height: 220px !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    white-space: nowrap !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+}
+
+/* Normalizar imágenes de carta: quitar desplazamientos absolutos y mostrar siempre */
+.carta, .divCartas img {
+    display: inline-block !important;
+    visibility: visible !important;
+    position: static !important;
+    height: 180px !important;
+    width: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+    z-index: 10 !important;
+}
+
+/* Evitar reglas antiguas que camuflen las cartas */
+.carta { box-shadow: 0 6px 18px rgba(0,0,0,0.45) !important; border-radius: 6px !important; }
+
+/* Ajuste del tamaño de las cartas para que no queden pequeñas */
+.carta {
+    display: inline-block !important;
+    width: auto !important;
+    height: 180px !important;        /* ajustar según prefieras */
+    margin: 0 !important;
+    left: auto !important;
+    transform: none !important;
+    visibility: visible !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45) !important;
+    border-radius: 6px !important;
+}
+
+/* Evitar que alguna regla previa oculte las imágenes */
+.divCartas img, .carta {
+    visibility: visible !important;
+    display: inline-block !important;
+    height: 180px !important;
+    width: auto !important;
+}
+
+/* asegúrate de espacio suficiente para las cartas */
+.divCartas {
+    min-height: 200px !important;
+    overflow-x: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+/* Responsive: en pantallas estrechas apilar verticalmente */
+@media (max-width: 840px) {
+    .area-cartas { flex-direction: column !important; gap: 18px !important; padding: 12px !important; }
+    .area-cartas > .panel { flex: 1 1 100% !important; max-width: none !important; min-width: 0 !important; }
+}
+
+/* Responsive: apilar en móviles */
+@media (max-width: 720px) {
+    .area-cartas { flex-direction: column !important; gap: 16px !important; padding: 12px !important; }
+    .area-cartas > .panel { flex: 1 1 100% !important; max-width: none !important; min-width: 0 !important; }
+}
+
+/* panel con fondo celeste, bordes redondeados y sombra */
+.area-cartas > .panel {
+    background: #cfeff8;               /* fondo celeste suave */
+    border-radius: 14px;               /* esquinas redondeadas */
+    padding: 18px;                     /* espacio interno */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.06);
+    color: #073b4c;                    /* texto oscuro para contraste */
+}
+
+/* Opcional: título del panel un poco más visible sobre el fondo */
+.area-cartas > .panel .panel-titulo,
+.area-cartas > .panel h1 {
+    color: #05323a;
+    margin: 0 0 8px 0;
+}
+
+/* Botones centrados debajo de las cartas */
+.botones-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;               /* separación entre botones */
+    margin: 28px auto 40px;  /* espacio arriba (entre cartas y botones) y abajo */
+    width: 100%;
+    max-width: 980px;        /* opcional: limitar ancho del grupo de botones */
+    box-sizing: border-box;
+}
+
+/* Aumentar tamaño y legibilidad de los botones */
+.botones-container .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+/* En pantallas pequeñas apilar botones */
+@media (max-width: 520px) {
+    .botones-container {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .botones-container .btn { width: 90%; max-width: 300px; }
+}
+
+/* ========================= OVERRIDES: AGRANDAR PANELES Y CONTENIDO ========================= */
+/* Forzar ambos paneles a tamaño mayor y exactamente iguales visualmente */
+.area-cartas {
+    align-items: stretch !important; /* hace que los paneles tengan la misma altura */
+}
+
+.area-cartas > .panel {
+    /* ancho mayor y flexible, pero igual para ambos */
+    flex: 0 0 540px !important;
+    max-width: 540px !important;
+    min-width: 420px !important;
+    /* altura suficiente para mostrar más cartas y contenido interno */
+    height: 420px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 18px !important;
+    box-sizing: border-box !important;
+}
+
+/* Zona de cartas ocupa la mayor parte del panel y crece verticalmente */
+.area-cartas > .panel .divCartas {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    min-height: 280px !important; /* más alto para mostrar cartas grandes */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    padding: 12px !important;
+}
+
+/* Cartas más grandes dentro de los paneles */
+.carta, .divCartas img {
+    height: 220px !important;
+    width: auto !important;
+    max-width: 85% !important; /* evita que una carta desborde demasiado en pantallas estrechas */
+    display: inline-block !important;
+    visibility: visible !important;
+    position: static !important;
+    margin: 0 !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18) !important;
+    border-radius: 8px !important;
+}
+
+/* Asegurar separación visual interior: titulo en la parte superior y contenido centrado */
+.area-cartas > .panel .panel-titulo,
+.area-cartas > .panel h1 {
+    margin: 6px 0 12px 0 !important;
+}
+
+/* Ajustes responsivos: en pantallas pequeñas reducir tamaño y apilar */
+@media (max-width: 1100px) {
+    .area-cartas > .panel { flex: 1 1 48% !important; max-width: 48% !important; height: 380px !important; }
+    .carta, .divCartas img { height: 200px !important; }
+}
+
+@media (max-width: 760px) {
+    .area-cartas { flex-direction: column !important; gap: 18px !important; }
+    .area-cartas > .panel { width: 100% !important; max-width: none !important; min-width: 0 !important; height: auto !important; }
+    .area-cartas > .panel .divCartas { min-height: 220px !important; }
+    .carta, .divCartas img { height: 160px !important; }
+}
+
+/* Fin de overrides */
+
+/* ========================= OVERRIDES (AUN MAS GRANDES) ========================= */
+/* Usuario pidió agrandarlo más: reglas finales con mayor tamaño */
+.area-cartas > .panel {
+    flex: 0 0 720px !important;
+    max-width: 720px !important;
+    min-width: 560px !important;
+    height: 520px !important;
+    padding: 22px !important;
+}
+
+.area-cartas > .panel .divCartas {
+    min-height: 360px !important;
+    gap: 20px !important;
+}
+
+.carta, .divCartas img {
+    height: 260px !important;
+    max-width: 90% !important;
+}
+
+@media (max-width: 1400px) {
+    .area-cartas > .panel { flex: 1 1 48% !important; max-width: 48% !important; height: 480px !important; }
+    .carta, .divCartas img { height: 240px !important; }
+}
+
+@media (max-width: 900px) {
+    .area-cartas { flex-direction: column !important; }
+    .area-cartas > .panel { width: 100% !important; max-width: none !important; min-width: 0 !important; height: auto !important; }
+    .area-cartas > .panel .divCartas { min-height: 260px !important; }
+    .carta, .divCartas img { height: 180px !important; }
+}
+
+/* Fin overrides aumentados */
