@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blackjack para Principiantes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="titulo text-center mt-3 mb-2">
+    Blackjack (Dos Jugadores)
+  </header>
+
+  <div class="row mt-2">
+    <div id="divBotones" class="col text-center">
+      <button id="btnNuevo" class="btn btn-danger">Nuevo Juego</button>
+      <button id="btnPedir1" class="btn btn-primary" disabled>Pedir carta J1</button>
+      <button id="btnDetener1" class="btn btn-secondary" disabled>Detener J1</button>
+      <button id="btnPedir2" class="btn btn-primary" disabled>Pedir carta J2</button>
+      <button id="btnDetener2" class="btn btn-secondary" disabled>Detener J2</button>
+    </div>
+  </div>
+
+  <div class="area-cartas">
+    <section id="panel-jugador1" class="panel">
+      <h1 class="panel-titulo">Jugador 1 - <small>0</small></h1>
+      <div id="jugador1-cartas" class="divCartas"></div>
+    </section>
+
+    <section id="panel-jugador2" class="panel">
+      <h1 class="panel-titulo">Jugador 2 - <small>0</small></h1>
+      <div id="jugador2-cartas" class="divCartas"></div>
+    </section>
+  </div>
+
+  <script src="assets/js/underscore-min.js"></script>
+  <script src="assets/js/juego.js"></script>
+  <script>
+  </script>
+</body>
+</html>
